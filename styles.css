@@ -36,9 +36,10 @@ body {
 .page-gradient {
   position: fixed;
   top: -20vh;
-  left: -30vw;
-  width: 120vw;
+  left: 50%;
+  width: 160vw;
   height: 120vh;
+  transform: translateX(-50%);
   background: radial-gradient(circle at top left, rgba(144, 118, 255, 0.18), transparent 55%),
     radial-gradient(circle at top right, rgba(255, 182, 193, 0.18), transparent 60%),
     radial-gradient(circle at bottom right, rgba(255, 208, 124, 0.2), transparent 55%);
