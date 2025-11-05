@@ -14,17 +14,17 @@
   <header class="site-header">
     <div class="container">
       <div class="brand">NimbusIQ</div>
-      <nav class="site-nav">
+      <nav class="site-nav" id="primary-navigation">
         <a href="#work">Work Better</a>
         <a href="#learn">Learn Faster</a>
         <a href="#communicate">Communicate Smarter</a>
         <a href="#integrations">Integrations</a>
       </nav>
-      <div class="cta-group">
+      <div class="cta-group" id="primary-cta">
         <a class="link" href="#">Log in</a>
         <a class="btn primary" href="#">Get started</a>
       </div>
-      <button class="menu-toggle" aria-label="Open menu">
+      <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primary-navigation primary-cta">
         <span></span>
         <span></span>
         <span></span>
@@ -306,6 +306,9 @@
         menuToggle.classList.toggle('open');
         nav.classList.toggle('open');
         ctaGroup.classList.toggle('open');
+        const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+        menuToggle.setAttribute('aria-expanded', String(!expanded));
+        menuToggle.setAttribute('aria-label', expanded ? 'Open menu' : 'Close menu');
       });
     }
   </script>
