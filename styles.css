@@ -83,6 +83,16 @@ body {
   position: relative;
 }
 
+.nav-item::after {
+  content: '';
+  position: absolute;
+  left: -0.75rem;
+  right: -0.75rem;
+  top: 100%;
+  height: 0.9rem;
+  pointer-events: none;
+}
+
 .nav-link {
   color: var(--text-secondary);
   text-decoration: none;
@@ -117,7 +127,7 @@ body {
 
 .nav-dropdown {
   position: absolute;
-  top: calc(100% + 0.75rem);
+  top: calc(100% + 0.25rem);
   left: 0;
   transform: translateY(-8px);
   display: flex;
@@ -943,6 +953,10 @@ body {
 
   .site-nav.open .nav-item {
     width: 100%;
+  }
+
+  .nav-item::after {
+    display: none;
   }
 
   .site-nav.open .nav-link,
